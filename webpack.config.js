@@ -1,7 +1,15 @@
 module.exports = {
-    entry: "./app.ts",
-    output: {
-        filename: "bundle.js"
+    entry: "./app",
+    output: { filename: "bundle.js" },
+    module: {
+        loaders: [
+            {
+                test: /.ts$/,
+                loader: "ts-loader"
+            }
+        ]
     },
-    watch: true
+    resolve: {
+        extensions: ["", ".ts", ".js"]
+    }
 }
